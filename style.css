@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* CSS Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* CSS Variables */
+:root {
+    --primary-color: #fff;
+    --secondary-color: #333;
+    --overlay-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Utilities */
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.card {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 10px;
+    width: 400px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 3rem;
+    padding: 2rem;
+}
+
+.btn {
+    font-family: 'Open Sans', sans-serif;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    transition: opacity 0.4s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.not-active {
+    display: none;
+}
+
+.wrong {
+    color: #FD5E53;
+}
+
+.correct {
+    color: #21BF73;
+}
+
+h1 {
+    margin-bottom: 1rem;
+}
+
+p {
+    text-align: center;
+}
+
+/* Styling */
+#main {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    overflow: auto;
+    background: url('./main-bg.jpg') center center/cover no-repeat;
+    position: relative;
+}
+
+#main:before {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    content: '';
+    background: var(--overlay-color);
+    z-index: 2;
+}
+
+#main * {
+    z-index: 3;
+}
+
+#main input {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: var(--overlay-color) 1px solid;
+    border-radius: 5px;
+    padding: 0.3rem;
+    margin: 0.4rem 0;
+    font-size: 1rem;
+    text-align: center;
+}
+
+
+/* Media QUeries */
+@media screen and (max-width: 500px) {
+
+    html {
+        font-size: 90%;
+    }
+
+    /* Utilities */
+    .card {
+        height: 250px;
+        width: 300px;
+    }
+    
+}
